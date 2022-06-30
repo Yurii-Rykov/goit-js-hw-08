@@ -7,7 +7,7 @@ import "simplelightbox/dist/simple-lightbox.min.css"
 const divConteiner = document.querySelector('.gallery');
 const cardsMarkup = getElemeentImg(galleryItems);
 divConteiner.insertAdjacentHTML('beforeend', cardsMarkup);
-divConteiner.addEventListener('click', onClickImages);
+
 
 
 function getElemeentImg(galleryItems) {
@@ -27,18 +27,6 @@ function getElemeentImg(galleryItems) {
 }
 
 
-const lightbox = new SimpleLightbox('.gallery .gallery__link', { captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250 })
+const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250 });
 
-function onClickImages(event) {
-    event.preventDefault()   /* <----------- відміна перезавантаження сторінки браузера */
-       
-    if (event.target.nodeName !== 'IMG') {
-        return;
-    }
 
-    return `<a class="gallery__item" href="${original}">
-                    <img class="gallery__image" src="${preview}" alt="${description}" />
-                </a>`
-}
-
-console.log(galleryItems);

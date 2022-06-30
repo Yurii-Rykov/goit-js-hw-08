@@ -10,6 +10,7 @@ player.on('timeupdate', throttle((time) => {
  console.log(time);   
 }, 3000));
 
-if (player) {
+const time = localStorage.getItem(TIME_LOCAL);
+if (time === true) {
     player.setCurrentTime(localStorage.getItem(TIME_LOCAL))
 }
