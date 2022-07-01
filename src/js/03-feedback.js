@@ -18,7 +18,7 @@ function onSubmitForm(evt) {
         return
     }
     console.log(obj);
-
+    let obj = {}
     evt.currentTarget.reset();
     localStorage.removeItem(FEEDBACK);
 }
